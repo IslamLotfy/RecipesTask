@@ -31,7 +31,7 @@ data class RecipesModel(
     @SerializedName("image")
     val image: String = "",
     @SerializedName("incompatibilities")
-    val incompatibilities: Any = Any(),
+    val incompatibilities: Any? = null,
     @SerializedName("ingredients")
     val ingredients: List<String> = listOf(),
     @SerializedName("keywords")

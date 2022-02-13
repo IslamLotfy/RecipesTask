@@ -7,8 +7,8 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-class RecipesDS @Inject constructor(private val recipesApi: RecipesApi) {
-    suspend fun getRecipes(): List<RecipesModel> {
+class RecipesDSImpl @Inject constructor(private val recipesApi: RecipesApi):RecipeDS {
+    override suspend fun getRecipes(): List<RecipesModel> {
         return recipesApi.getRecipes()
     }
 }

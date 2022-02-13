@@ -14,7 +14,7 @@ data class RecipesUIModel(
     val highlighted: Boolean = false,
     val id: String = "",
     val image: String = "",
-    val incompatibilities: Any = Any(),
+    val incompatibilities: Any? = null,
     val ingredients: List<String> = listOf(),
     val keywords: List<String> = listOf(),
     val name: String = "",

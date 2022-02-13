@@ -2,6 +2,8 @@ package com.example.courses.modules.home.di
 
 import com.example.recipestask.modules.home.data.api.RecipesApi
 import com.example.recipestask.modules.home.data.repository.RecipesRepositoryImpl
+import com.example.recipestask.modules.home.data.source.RecipeDS
+import com.example.recipestask.modules.home.data.source.RecipesDSImpl
 import com.example.recipestask.modules.home.domain.repository.RecipesRepository
 import dagger.Binds
 import dagger.Module
@@ -19,4 +21,7 @@ abstract class HomeModule {
     }
     @Binds
     internal abstract fun bindsRecipesRepository(recipesRepositoryImpl: RecipesRepositoryImpl): RecipesRepository
+
+    @Binds
+    internal abstract fun bindsRecipesDS(recipesDSImpl: RecipesDSImpl): RecipeDS
 }

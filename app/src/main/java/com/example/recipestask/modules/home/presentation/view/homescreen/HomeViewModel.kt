@@ -1,5 +1,6 @@
 package com.example.courses.modules.home.presentation.view.homescreen
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -24,7 +25,7 @@ class HomeViewModel @Inject constructor(private val getRecipesUseCase: GetRecipe
                     recipes.postValue(it.map { it.toRecipesUIModel() })
                 }
             }catch (e:Throwable){
-
+                Log.e("HomeViewModel",e.toString())
             }
         }
     }
