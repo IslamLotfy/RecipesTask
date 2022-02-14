@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.recipestask.core.utils.SingleLiveEvent
 import com.example.recipestask.modules.home.domain.entity.RecipesEntity
 import com.example.recipestask.modules.home.domain.interactors.GetRecipesUseCase
 import com.example.recipestask.modules.home.presentation.model.RecipesUIModel
@@ -18,6 +19,8 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(private val getRecipesUseCase: GetRecipesUseCase) :
     ViewModel() {
     val recipes = MutableLiveData<List<RecipesUIModel>>()
+    val openDetailsFragment = SingleLiveEvent<Boolean>()
+
     fun getRecipes() {
         viewModelScope.launch(Dispatchers.IO) {
             try {

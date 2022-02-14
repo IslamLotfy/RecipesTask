@@ -1,5 +1,10 @@
 package com.example.recipestask.modules.home.presentation.model
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+import kotlinx.android.parcel.RawValue
+
+@Parcelize
 data class RecipesUIModel(
     val calories: String = "",
     val carbos: String = "",
@@ -14,7 +19,7 @@ data class RecipesUIModel(
     val highlighted: Boolean = false,
     val id: String = "",
     val image: String = "",
-    val incompatibilities: Any? = null,
+    val incompatibilities:@RawValue Any? = null,
     val ingredients: List<String> = listOf(),
     val keywords: List<String> = listOf(),
     val name: String = "",
@@ -23,6 +28,6 @@ data class RecipesUIModel(
     val rating: Double = 0.0,
     val ratings: Int = 0,
     val time: String = "",
-    val undeliverableIngredients: List<Any> = listOf(),
+    val undeliverableIngredients:@RawValue List<Any> = listOf(),
     val weeks: List<String> = listOf()
-)
+):Parcelable

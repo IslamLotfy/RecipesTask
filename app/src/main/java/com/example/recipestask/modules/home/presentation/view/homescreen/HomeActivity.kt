@@ -10,20 +10,23 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
-    private val homeViewModel: HomeViewModel by viewModels()
     lateinit var binding: ActivityMainBinding
-    private val adapter = RecipesAdapter {
-
-    }
-
+    private val homeViewModel: HomeViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.rvRecipes.adapter = adapter
-        homeViewModel.getRecipes()
-        homeViewModel.recipes.observe(this) {
-            adapter.submitList(it)
+        val homeFragment = HomeFragment.newInstance()
+        supportFragmentManager.beginTransaction()
+            .add(binding.fragmentContainerView.id,homeFragment)
+            .commit()
+
+        homeViewModel.openDetailsFragment.observe(this){
+            val detailsFragment = DetailsFragment.newInstance()
+            supportFragmentManager.beginTransaction()
+                .replace(binding.fragmentContainerView.id,detailsFragment)
+                .addToBackStack("Home")
+                .commit()
         }
     }
 }
