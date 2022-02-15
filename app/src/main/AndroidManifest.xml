@@ -3,6 +3,7 @@
     package="com.example.recipestask">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".core.application.RecipesTaskApplication"
         android:allowBackup="true"
@@ -12,12 +13,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RecipesTask">
         <activity
-            android:name=".modules.home.presentation.view.homescreen.HomeActivity"
+            android:name=".modules.login.presentation.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".modules.home.presentation.view.homescreen.HomeActivity"
+            android:exported="true">
         </activity>
     </application>
 

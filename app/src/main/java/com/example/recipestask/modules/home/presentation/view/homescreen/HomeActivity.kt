@@ -3,8 +3,6 @@ package com.example.recipestask.modules.home.presentation.view.homescreen
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import com.example.courses.modules.home.presentation.view.homescreen.HomeViewModel
-import com.example.recipestask.R
 import com.example.recipestask.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 

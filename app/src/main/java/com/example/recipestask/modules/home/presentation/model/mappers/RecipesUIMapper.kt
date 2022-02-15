@@ -1,19 +1,21 @@
 package com.example.recipestask.modules.home.presentation.model.mappers
 
 import com.example.recipestask.modules.home.domain.entity.RecipesEntity
+import com.example.recipestask.modules.home.presentation.model.IngredientModel
 import com.example.recipestask.modules.home.presentation.model.RecipesUIModel
+import com.example.recipestask.R
 
 fun RecipesEntity.toRecipesUIModel(): RecipesUIModel {
     return RecipesUIModel(
-        calories,
-        carbos,
+        if (calories.isBlank()) "0" else calories,
+        if (carbos.isBlank()) "0" else carbos,
         country,
         deliverableIngredients,
         description,
         difficulty,
-        fats,
+        if (fats.isBlank()) "0" else fats,
         favorites,
-        fibers,
+        if (fibers.isBlank()) "0" else fibers,
         headline,
         highlighted,
         id,
@@ -23,11 +25,20 @@ fun RecipesEntity.toRecipesUIModel(): RecipesUIModel {
         keywords,
         name,
         products,
-        proteins,
+        if (proteins.isBlank()) "0" else proteins,
         rating,
         ratings,
         time,
         undeliverableIngredients,
-        weeks
+        weeks,
+        this.getIngredientUIModel()
     )
+}
+
+private fun RecipesEntity.getIngredientUIModel(): List<IngredientModel> {
+    return ingredients.map { name ->
+        val drwable =
+            if (deliverableIngredients.contains(name)) R.drawable.ic_right else R.drawable.ic_wrong
+        IngredientModel(name = name, drwable)
+    }
 }

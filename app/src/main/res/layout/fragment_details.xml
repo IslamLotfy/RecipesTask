@@ -7,200 +7,219 @@
     android:layout_margin="@dimen/dimen_12dp"
     app:cardCornerRadius="@dimen/dimen_12dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/ivPoster"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_200dp"
-            android:scaleType="fitXY"
-            android:layout_marginVertical="@dimen/dimen_12dp"
-            android:src="@mipmap/ic_launcher"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/dimen_12dp">
 
-        <TextView
-            android:id="@+id/tvName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:textColor="@color/black"
-            android:textSize="@dimen/dimen_18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ivPoster"
-            tools:text="Crispy Fish Goujons" />
-        <TextView
-            android:id="@+id/tvFatsTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:textColor="@color/black"
-            android:textSize="@dimen/dimen_18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/tvFiberTitle"
-            app:layout_constraintTop_toBottomOf="@id/tvName"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"
-            android:text="Fats" />
+            <ImageView
+                android:id="@+id/ivPoster"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_200dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dimen_12dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivPoster"
+                tools:text="Crispy Fish Goujons" />
+
+            <TextView
+                android:id="@+id/tvFatsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Fats"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/tvFiberTitle"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvName" />
 
 
-        <TextView
-            android:id="@+id/tvFiberTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="8dp"
-            android:textColor="@color/black"
-            android:textSize="@dimen/dimen_18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/tvFatsTitle"
-            app:layout_constraintEnd_toStartOf="@id/tvProtienTitle"
-            app:layout_constraintTop_toTopOf="@id/tvFatsTitle"
-            android:text="Cal" />
-        <TextView
-            android:id="@+id/tvProtienTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="8dp"
-            android:textColor="@color/black"
-            android:textSize="@dimen/dimen_18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/tvFiberTitle"
-            app:layout_constraintEnd_toStartOf="@id/tvCalorisTitle"
-            app:layout_constraintTop_toTopOf="@id/tvFatsTitle"
-            android:text="Cal" />
-        <TextView
-            android:id="@+id/tvCalorisTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="8dp"
-            android:textColor="@color/black"
-            android:textSize="@dimen/dimen_18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/tvProtienTitle"
-            app:layout_constraintEnd_toStartOf="@id/tvCarbsTitle"
-            app:layout_constraintTop_toTopOf="@id/tvFatsTitle"
-            android:text="Cal" />
-        <TextView
-            android:id="@+id/tvCarbsTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/dimen_12dp"
-            android:textColor="@color/black"
-            android:textSize="@dimen/dimen_18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/tvCalorisTitle"
-            app:layout_constraintTop_toTopOf="@id/tvFatsTitle"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:text="Carbs" />
-        <TextView
-            android:id="@+id/tvFats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:textColor="@color/black"
-            android:textSize="@dimen/dimen_18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@id/tvFatsTitle"
-            app:layout_constraintEnd_toEndOf="@id/tvFatsTitle"
-            app:layout_constraintTop_toBottomOf="@id/tvFatsTitle"
-            tools:text="Crispy " />
-        <TextView
-            android:id="@+id/tvCarbs"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="@dimen/dimen_18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@id/tvCarbsTitle"
-            app:layout_constraintTop_toTopOf="@id/tvFats"
-            app:layout_constraintEnd_toEndOf="@id/tvCarbsTitle"
-            tools:text="Crispy" />
-        <TextView
-            android:id="@+id/tvCaloris"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="8dp"
-            android:textColor="@color/black"
-            android:textSize="@dimen/dimen_18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@id/tvCalorisTitle"
-            app:layout_constraintEnd_toEndOf="@id/tvCalorisTitle"
-            app:layout_constraintTop_toTopOf="@id/tvFats"
-            tools:text="Crispy" />
-        <TextView
-            android:id="@+id/tvFiber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="8dp"
-            android:textColor="@color/black"
-            android:textSize="@dimen/dimen_18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@id/tvFiberTitle"
-            app:layout_constraintEnd_toEndOf="@id/tvFiberTitle"
-            app:layout_constraintTop_toTopOf="@id/tvFats"
-            tools:text="Crispy" />
-        <TextView
-            android:id="@+id/tvProtien"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="8dp"
-            android:textColor="@color/black"
-            android:textSize="@dimen/dimen_18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@id/tvProtienTitle"
-            app:layout_constraintEnd_toEndOf="@id/tvProtienTitle"
-            app:layout_constraintTop_toTopOf="@id/tvFats"
-            tools:text="Crispy" />
-        <TextView
-            android:id="@+id/tvDiscription"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_12dp"
-            android:textColor="@color/black"
-            android:textSize="@dimen/dimen_18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvHeadline"
-            tools:text="Crispy Fish Goujons" />
-        <TextView
-            android:id="@+id/tvHeadline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:textColor="@color/black"
-            android:textSize="@dimen/dimen_18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvFats"
-            tools:text="Crispy Fish Goujons" />
-        <TextView
-            android:id="@+id/tvName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:textColor="@color/black"
-            android:textSize="@dimen/dimen_18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ivPoster"
-            tools:text="Crispy Fish Goujons" />
-        <TextView
-            android:id="@+id/tvName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:textColor="@color/black"
-            android:textSize="@dimen/dimen_18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ivPoster"
-            tools:text="Crispy Fish Goujons" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tvFiberTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:text="Fibers"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/tvProtienTitle"
+                app:layout_constraintStart_toEndOf="@id/tvFatsTitle"
+                app:layout_constraintTop_toTopOf="@id/tvFatsTitle" />
+
+            <TextView
+                android:id="@+id/tvProtienTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:text="Protien"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/tvCalorisTitle"
+                app:layout_constraintStart_toEndOf="@id/tvFiberTitle"
+                app:layout_constraintTop_toTopOf="@id/tvFatsTitle" />
+
+            <TextView
+                android:id="@+id/tvCalorisTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:text="Cal"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/tvCarbsTitle"
+                app:layout_constraintStart_toEndOf="@id/tvProtienTitle"
+                app:layout_constraintTop_toTopOf="@id/tvFatsTitle" />
+
+            <TextView
+                android:id="@+id/tvCarbsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_12dp"
+                android:text="Carbs"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvCalorisTitle"
+                app:layout_constraintTop_toTopOf="@id/tvFatsTitle" />
+
+            <TextView
+                android:id="@+id/tvFats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_14sp"
+                app:layout_constraintEnd_toEndOf="@id/tvFatsTitle"
+                app:layout_constraintStart_toStartOf="@id/tvFatsTitle"
+                app:layout_constraintTop_toBottomOf="@id/tvFatsTitle"
+                tools:text="Crispy " />
+
+            <TextView
+                android:id="@+id/tvCarbs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_14sp"
+                app:layout_constraintEnd_toEndOf="@id/tvCarbsTitle"
+                app:layout_constraintStart_toStartOf="@id/tvCarbsTitle"
+                app:layout_constraintTop_toTopOf="@id/tvFats"
+                tools:text="Crispy" />
+
+            <TextView
+                android:id="@+id/tvCaloris"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_14sp"
+                app:layout_constraintEnd_toEndOf="@id/tvCalorisTitle"
+                app:layout_constraintStart_toStartOf="@id/tvCalorisTitle"
+                app:layout_constraintTop_toTopOf="@id/tvFats"
+                tools:text="Crispy" />
+
+            <TextView
+                android:id="@+id/tvFiber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_14sp"
+                app:layout_constraintEnd_toEndOf="@id/tvFiberTitle"
+                app:layout_constraintStart_toStartOf="@id/tvFiberTitle"
+                app:layout_constraintTop_toTopOf="@id/tvFats"
+                tools:text="Crispy" />
+
+            <TextView
+                android:id="@+id/tvProtien"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_14sp"
+                app:layout_constraintEnd_toEndOf="@id/tvProtienTitle"
+                app:layout_constraintStart_toStartOf="@id/tvProtienTitle"
+                app:layout_constraintTop_toTopOf="@id/tvFats"
+                tools:text="Crispy" />
+
+            <TextView
+                android:id="@+id/tvHeadline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvFats"
+                tools:text="Crispy Fish Goujons" />
+
+            <TextView
+                android:id="@+id/tvDiscription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_12dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvHeadline"
+                tools:text="Crispy Fish Goujons" />
+
+            <TextView
+                android:id="@+id/tvIngredients"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Ingredients"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDiscription" />
+
+            <TextView
+                android:id="@+id/tvDeliver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Deliberable"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDiscription" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvIngredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/tvIngredients"
+                tools:listitem="@layout/ingredients_list_item"
+                android:paddingBottom="@dimen/dimen_12dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 </androidx.cardview.widget.CardView>

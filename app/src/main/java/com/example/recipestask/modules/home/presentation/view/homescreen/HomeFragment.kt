@@ -5,23 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
-import com.example.courses.modules.home.presentation.view.homescreen.HomeViewModel
-import com.example.recipestask.R
-import com.example.recipestask.databinding.ActivityMainBinding
 import com.example.recipestask.databinding.FragmentHomeBinding
-import com.example.recipestask.modules.home.presentation.model.RecipesUIModel
 import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
-    private var param1: RecipesUIModel? = null
     private lateinit var binding: FragmentHomeBinding
     private val homeViewModel: HomeViewModel by activityViewModels()
     private val adapter = RecipesAdapter {
+        homeViewModel.recipesUIModel.value = it
         homeViewModel.openDetailsFragment.postValue(true)
     }
 
