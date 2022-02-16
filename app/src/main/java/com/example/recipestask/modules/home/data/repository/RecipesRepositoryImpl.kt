@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 
-class RecipesRepositoryImpl @Inject constructor(private val recipesDS: RecipeDS,private val dispatcher: CoroutineDispatcher = Dispatchers.IO) :
+class RecipesRepositoryImpl @Inject constructor(private val recipesDS: RecipeDS,private val dispatcher: CoroutineDispatcher) :
     RecipesRepository {
     override fun getRecipes(): Flow<List<RecipesEntity>> {
         return flow {
