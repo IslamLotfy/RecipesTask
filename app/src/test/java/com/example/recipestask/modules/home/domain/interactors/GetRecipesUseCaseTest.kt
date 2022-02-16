@@ -8,6 +8,7 @@ import com.example.recipestask.modules.home.domain.repository.RecipesRepository
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.runBlocking
@@ -32,7 +33,7 @@ class GetRecipesUseCaseTest {
     @Before
     fun setUp() {
         MockKAnnotations.init(this, relaxUnitFun = true)
-        getRecipesUseCase = GetRecipesUseCase(RecipesRepositoryImpl(FakeRecipeDS()))
+        getRecipesUseCase = GetRecipesUseCase(RecipesRepositoryImpl(FakeRecipeDS(),Dispatchers.Unconfined))
     }
 
     @Test

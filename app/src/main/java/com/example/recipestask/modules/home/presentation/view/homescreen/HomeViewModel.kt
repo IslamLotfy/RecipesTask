@@ -29,7 +29,6 @@ class HomeViewModel @Inject constructor(private val getRecipesUseCase: GetRecipe
                     recipes.postValue(it.map { it.toRecipesUIModel() })
                 }
             }catch (e:Throwable){
-                Log.e("HomeViewModel",e.toString())
             }
         }
     }
