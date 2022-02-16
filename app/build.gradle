@@ -113,4 +113,14 @@ dependencies {
 
     implementation 'com.github.bumptech.glide:glide:4.13.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
+
+    //For using viewModelScope
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
+//For runBlockingTest, CoroutineDispatcher etc.
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.2'
+//For InstantTaskExecutorRule
+    testImplementation 'androidx.arch.core:core-testing:2.1.0'
+
+    testImplementation "io.mockk:mockk:1.12.2"
+
 }
