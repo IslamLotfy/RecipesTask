@@ -26,7 +26,7 @@ class HomeViewModel @Inject constructor(private val getRecipesUseCase: GetRecipe
         viewModelScope.launch {
             try {
                 getRecipesUseCase.build().collect {
-                    recipes.postValue(it.map { it.toRecipesUIModel() })
+                    recipes.value = (it.map { it.toRecipesUIModel() })
                 }
             }catch (e:Throwable){
             }
